@@ -37,15 +37,19 @@ function noteOnEvent(channel, pitch, velocity)
     script.log("Note on " + channel + ", " + pitch + ", " + velocity);
     if (channel == 3) {
         var buttonId = pitch - 35;
-        var buttonDown = ((velocity > 0) ? true : false);
-        local.values.buttons.getChild("buttons" + buttonId).set(buttonDown);
+        var buttonDown = ((velocity > 0) ? 1 : 0);
+        local.values.buttons.getChild("button" + buttonId).set(buttonDown);
     }
 }
 
 function noteOffEvent(channel, pitch, velocity)
 {
     script.log("Note off " + channel + ", " + pitch + ", " + velocity);
-    // Shouldn't be getting Note Off Events
+    // Shouldn't be getting Note Off Events, but we'll use them as offs anyway
+    if (channel == 3) {
+        var buttonId = pitch - 35;
+        local.values.buttons.getChild("button" + buttonId).set(0);
+    }
 }
 
 function ccEvent(channel, number, value)
