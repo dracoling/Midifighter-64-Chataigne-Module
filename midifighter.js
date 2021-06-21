@@ -27,7 +27,7 @@ function moduleParameterChanged(param)
     if(param.getParent().name == "buttonColors")
     {
         var id = parseInt(param.name.substring(6));
-        var val = param.getData();
+        var val = param.get();
         setLed(id, val[0], 0);
     }
 }
