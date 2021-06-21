@@ -193,11 +193,6 @@
 						"Orange":[9],
 						"Blue":[37]
 					}
-				},
-
-				"Flashing":
-				{
-					"type":"Boolean"
 				}
 			}
 		},

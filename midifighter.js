@@ -2,23 +2,20 @@
 local.sendCC(3, 3, 0); //Force "Bank 1" Mode on Midi Fighter 64
  
 // -- internal functions
-function setLed(led, color, animation)
+function setLed(led, color)
 {
     local.sendNoteOn(3, led+35, color);
-    local.sendNoteOn(4, led-1, animation);
 }
 
 // -- commands for use in UI
-function setButtonColor(button, color, flashing)
+function setButtonColor(button, color)
 {
-    animation = 0;
-    if (flashing) { animation = 38; } // flash every beat
-    setLed(button, color, animation);
+    setLed(button, color);
 }
 
 function resetColors()
 {
-    for(var i=1;i<65;i++) setLed(i,0,0);
+    for(var i=1;i<65;i++) setLed(i,0);
 }
 
 // -- events
