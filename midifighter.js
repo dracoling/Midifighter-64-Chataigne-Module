@@ -25,7 +25,7 @@ function moduleParameterChanged(param)
     {
         var id = parseInt(param.niceName.split(' ')[1]);
         var val = param.get();
-        setLed(id, val[0], 0);
+        setLed(id, val[0]);
     }
 }
 
