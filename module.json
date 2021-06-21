@@ -203,7 +203,7 @@
 		},
 
 
-		"Reset Pad Colors":
+		"Reset Colors":
 		{
 			"menu":"",
 			"callback":"resetColors"
