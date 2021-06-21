@@ -15,7 +15,9 @@ function setButtonColor(button, color)
 
 function resetColors()
 {
-    for(var i=1;i<65;i++) setLed(i,0);
+    for(var i=1;i<65;i++) {
+        local.parameters.buttonColors.getChild("button"+i).set("Dim");
+    }
 }
 
 // -- events
